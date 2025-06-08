@@ -4,10 +4,22 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 
+:root {
+  --primary-green: #75936c;
+  --secondary-green: #8ba888;
+  --primary-purple: #8A6C93;
+  --secondary-purple: #9B7EA3;
+  --dark-text: #333333;
+  --light-text: #FFFFFF;
+  --background: #FFFFFF;
+  --section-bg: #F5F5F5;
+}
+
 body {
-  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Canva Sans', 'Noto Sans Variable', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   padding-top: 54px;
-  color: #868e96;
+  color: var(--dark-text);
+  line-height: 1.6;
 }
 
 @media (min-width: 992px) {
@@ -23,10 +35,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #343a40;
+  font-family: 'Canva Sans', 'Noto Sans Variable', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--primary-green);
 }
 
 h1 {
@@ -48,23 +59,90 @@ p.lead {
 }
 
 .subheading {
-  text-transform: uppercase;
   font-weight: 500;
-  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Canva Sans', 'Noto Sans Variable', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
+  color: var(--primary-green);
+}
+
+.navbar {
+  background-color: var(--primary-green);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  color: var(--light-text) !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--light-text) !important;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-purple) !important;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: var(--light-text);
+  padding: 150px 0 100px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--primary-purple);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-purple);
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section:nth-child(even) {
+  background-color: var(--section-bg);
 }
 
 .social-icons a {
   display: inline-block;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
-  color: #fff !important;
+  background-color: var(--primary-green);
+  color: var(--light-text) !important;
   border-radius: 100%;
   text-align: center;
   font-size: 1.5rem;
   line-height: 3.5rem;
   margin-right: 1rem;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:last-child {
@@ -72,25 +150,37 @@ p.lead {
 }
 
 .social-icons a:hover {
-  background-color: #3898bd;
+  background-color: var(--primary-purple);
+  transform: translateY(-3px);
 }
 
 .dev-icons {
   font-size: 3rem;
 }
 
+.dev-icons .list-inline-item i {
+  color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+
 .dev-icons .list-inline-item i:hover {
-  color: #3898bd;
+  color: var(--primary-purple);
+  transform: scale(1.1);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05rem;
-  text-transform: uppercase;
+  color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link:hover {
+  color: var(--primary-purple);
 }
 
 #sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
+  outline-color: var(--primary-purple);
 }
 
 @media (min-width: 992px) {
@@ -99,19 +189,14 @@ p.lead {
     position: fixed;
     top: 0;
     left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     width: 17rem;
     height: 100vh;
+    background-color: var(--background);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   }
   #sideNav .navbar-brand {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: auto auto 0;
     padding: 0.5rem;
@@ -119,25 +204,20 @@ p.lead {
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    border: 0.1rem solid var(--primary-purple);
+    transition: all 0.3s ease;
+  }
+  #sideNav .navbar-brand .img-profile:hover {
+    border-color: var(--primary-green);
   }
   #sideNav .navbar-collapse {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
-    -webkit-box-flex: 0;
-    -ms-flex-positive: 0;
     flex-grow: 0;
     width: 100%;
     margin-bottom: auto;
   }
   #sideNav .navbar-collapse .navbar-nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
   }
@@ -153,10 +233,16 @@ section.resume-section {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
   max-width: 75rem;
+  background-color: var(--background);
+}
+
+section.resume-section:nth-child(even) {
+  background-color: var(--section-bg);
 }
 
 section.resume-section .resume-item .resume-date {
   min-width: none;
+  color: var(--primary-green);
 }
 
 @media (min-width: 768px) {
@@ -176,17 +262,122 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
- background-color: #3898bd !important;
+  background-color: var(--primary-green) !important;
 }
 
 .text-primary {
-  color: #3898bd !important;
+  color: var(--primary-green) !important;
 }
 
 a {
-  color: #3898bd;
+  color: var(--primary-green);
+  transition: all 0.3s ease;
 }
 
 a:hover, a:focus, a:active {
-  color: #824027;
+  color: var(--primary-purple);
+  text-decoration: none;
+}
+
+/* Additional modern styling */
+.resume-item {
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.resume-item:hover {
+  background-color: var(--section-bg);
+  transform: translateX(5px);
+}
+
+.fa-li {
+  color: var(--primary-purple);
+}
+
+.text-warning {
+  color: var(--primary-purple) !important;
+}
+
+/* Timeline styling */
+.timeline-item {
+  position: relative;
+  padding: 2rem;
+  border-left: 3px solid var(--primary-green);
+  margin-left: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-purple);
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: var(--primary-green);
+  color: var(--light-text);
+  border-radius: 10px 10px 0 0 !important;
+}
+
+/* Override Bootstrap primary colors */
+.btn-primary {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-green) !important;
+  border-color: var(--secondary-green) !important;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-green);
+  color: var(--light-text);
+}
+
+.skill-badge {
+  background-color: var(--secondary-purple);
+  color: var(--dark-text);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .hero-section {
+    padding: 100px 0 50px;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
 }
